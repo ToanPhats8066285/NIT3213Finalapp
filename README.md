@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-NIT3213 Mobile Application Development - Final Assignment
+
+# NIT3213 Mobile Application Development - Final Assignment
 
 This Android application demonstrates API integration, Clean Architecture, and modern Android development practices for the NIT3213 course.
 
@@ -142,6 +142,7 @@ Press green ▶️ Run
 Select emulator/connected device
 
 Project Structure
+,,,
 
 FinalApp/
 └── app/
@@ -183,6 +184,8 @@ FinalApp/
 │       └── nav_graph.xml
 ├── build.gradle
 └── gradle.properties
+
+,,,
 
 
 Input validation + error handling
@@ -284,10 +287,7 @@ Gradle: 8.1.4
 
 Language: Kotlin
 
-License
 
-<<<<<<< HEAD
-This project is for educational purposes as part of the NIT3213 Mobile Application Development course.
-=======
-This project is for educational purposes as part of the NIT3213 Mobile Application Development course.
->>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
+# License
+
+This project is created for educational purposes as part of the NIT3213 Mobile Application Development course.
