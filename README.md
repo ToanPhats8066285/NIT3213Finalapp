@@ -142,41 +142,48 @@ Press green ▶️ Run
 Select emulator/connected device
 
 Project Structure
-<<<<<<< HEAD
-=======
-pgsql
-Copy code
->>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
+
 FinalApp/
-├── app/src/main/java/com/example/finalapp/
+└── app/
+├── src/main/java/com/example/finalapp/
 │   ├── MyApp.kt                  # Hilt entry point
-│   ├── MainActivity.kt            # NavHost container
+│   ├── MainActivity.kt           # NavHost container
 │   ├── data/
-│   │   ├── api/ApiService.kt
-│   │   ├── models/ (LoginRequest, LoginResponse, DashboardResponse, Entity)
-│   │   └── repository/AppRepository.kt
+│   │   ├── api/
+│   │   │   └── ApiService.kt
+│   │   ├── models/
+│   │   │   ├── LoginRequest.kt
+│   │   │   ├── LoginResponse.kt
+│   │   │   ├── DashboardResponse.kt
+│   │   │   └── Entity.kt
+│   │   └── repository/
+│   │       └── AppRepository.kt
 │   ├── domain/
-│   │   ├── repository/AppRepositoryInterface.kt
-│   │   └── usecase/ (LoginUseCase, GetDashboardUseCase)
-│   ├── di/ (NetworkModule, AppModule)
-│   ├── presentation/
-│   │   ├── login/ (LoginFragment, LoginViewModel)
-│   │   ├── dashboard/ (DashboardFragment, DashboardAdapter, DashboardViewModel)
-│   │   └── details/ (DetailsFragment)
-│   └── utils/ (Constants, Resource)
-├── res/layout/ (XML layouts)
-├── res/navigation/nav_graph.xml
-├── build.gradle (app-level)
-├── settings.gradle
+│   │   ├── repository/
+│   │   │   └── AppRepositoryInterface.kt
+│   │   └── usecase/
+│   │       ├── LoginUseCase.kt
+│   │       └── GetDashboardUseCase.kt
+│   ├── di/
+│   │   ├── NetworkModule.kt
+│   │   └── AppModule.kt
+│   └── presentation/
+│       ├── login/
+│       │   ├── LoginFragment.kt
+│       │   └── LoginViewModel.kt
+│       ├── dashboard/
+│       │   ├── DashboardFragment.kt
+│       │   ├── DashboardAdapter.kt
+│       │   └── DashboardViewModel.kt
+│       └── details/
+│           └── DetailsFragment.kt
+├── src/main/res/
+│   ├── layout/                    # XML layouts
+│   └── navigation/
+│       └── nav_graph.xml
+├── build.gradle
 └── gradle.properties
 
-Features
-Login Screen
-<<<<<<< HEAD
-
-=======
->>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
-Campus dropdown + username + password
 
 Input validation + error handling
 
