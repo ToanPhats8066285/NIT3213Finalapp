@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 NIT3213 Mobile Application Development - Final Assignment
 
 This Android application demonstrates API integration, Clean Architecture, and modern Android development practices for the NIT3213 course.
@@ -65,6 +66,55 @@ git clone <your-repository-url>
 cd FinalApp
 
 
+=======
+# NIT3213 Mobile Application Development - Final Assignment
+
+This Android application demonstrates API integration, Clean Architecture, and modern Android development practices for the NIT3213 course.
+
+## Project Overview
+
+The app implements a three-screen workflow:
+- **Login Screen**: Campus selection + user authentication
+- **Dashboard Screen**: Displays entity list from API
+- **Details Screen**: Shows detailed information of a selected entity
+
+## API Integration
+
+- **Base URL**: `https://nit3213api.onrender.com/`
+- **Login Endpoint**: `POST /{campus}/auth`
+- **Dashboard Endpoint**: `GET /dashboard/{keypass}`
+
+### Login Credentials
+- **Username**: Your first name
+- **Password**: Your Student ID without 's' (e.g., `8066285`)
+- **Campus**: `footscray`, `sydney`, or `br`
+
+## Technical Stack
+
+- **Language**: Kotlin
+- **Architecture**: Clean Architecture (MVVM)
+- **Dependency Injection**: Hilt
+- **Networking**: Retrofit + Moshi
+- **Navigation**: Navigation Component + Safe Args
+- **UI**: Material Design 3 + ViewBinding
+- **Data Storage**: DataStore Preferences
+- **Testing**: JUnit + MockK + Coroutines Test
+
+## Project Setup
+
+### Prerequisites
+- Android Studio Jellyfish (2023.1.1+)
+- JDK 17+
+- Android SDK (API 24+)
+- Git
+
+### Installation Steps
+
+1. **Clone the repository**:
+   ```bash
+   git clone <your-repository-url>
+   cd FinalApp
+>>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
 Open in Android Studio:
 
 Launch Android Studio
@@ -92,6 +142,11 @@ Press green ▶️ Run
 Select emulator/connected device
 
 Project Structure
+<<<<<<< HEAD
+=======
+pgsql
+Copy code
+>>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
 FinalApp/
 ├── app/src/main/java/com/example/finalapp/
 │   ├── MyApp.kt                  # Hilt entry point
@@ -117,7 +172,10 @@ FinalApp/
 
 Features
 Login Screen
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
 Campus dropdown + username + password
 
 Input validation + error handling
@@ -125,7 +183,10 @@ Input validation + error handling
 Loading indicator
 
 Dashboard Screen
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
 RecyclerView entity list
 
 Loading + error states
@@ -133,13 +194,19 @@ Loading + error states
 Navigate to details on item click
 
 Details Screen
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
 Display full entity info (field, concept, scientist, description)
 
 Scrollable UI
 
 Architecture
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
 Domain Layer: Business logic & usecases
 
 Data Layer: Repository + Retrofit API service
@@ -147,7 +214,10 @@ Data Layer: Repository + Retrofit API service
 UI Layer: Fragments + ViewModels + Adapters
 
 Dependency Injection
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
 Hilt provides DI across app
 
 @Singleton for repositories and network
@@ -155,13 +225,19 @@ Hilt provides DI across app
 @HiltViewModel for ViewModels
 
 State Management
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
 Resource<Success|Error|Loading> wrapper
 
 LiveData observers in Fragments
 
 Testing
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
 JUnit for ViewModels & Repositories
 
 MockK for mocking dependencies
@@ -170,10 +246,17 @@ Coroutines Test for async flows
 
 Run:
 
+<<<<<<< HEAD
 ./gradlew test
 
 Assignment Requirements
 
+=======
+bash
+Copy code
+./gradlew test
+Assignment Requirements
+>>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
 ✅ Three screens (Login, Dashboard, Details)
 ✅ API integration (Login + Dashboard)
 ✅ Navigation with Safe Args
@@ -182,7 +265,10 @@ Assignment Requirements
 ✅ GitHub repo with README + License
 
 Development Notes
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
 Min SDK: 24
 
 Target SDK: 35
@@ -193,4 +279,8 @@ Language: Kotlin
 
 License
 
+<<<<<<< HEAD
 This project is for educational purposes as part of the NIT3213 Mobile Application Development course.
+=======
+This project is for educational purposes as part of the NIT3213 Mobile Application Development course.
+>>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
