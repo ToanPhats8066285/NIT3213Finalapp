@@ -1,293 +1,248 @@
+# 📱 NIT3213 Mobile Application Development – Final Assignment
 
-# NIT3213 Mobile Application Development - Final Assignment
+This Android application demonstrates API integration, Clean Architecture, and modern Android development practices for the NIT3213 course.  
+It implements a **three-screen workflow**: Login → Dashboard → Details.
 
-This Android application demonstrates API integration, Clean Architecture, and modern Android development practices for the NIT3213 course.
+---
 
-Project Overview
+## 🔑 Features
 
-The app implements a three-screen workflow:
+### 🔐 Login Screen
+- Campus dropdown (footscray, sydney, br)
+- Username + Password input
+- Input validation & error handling
+- Loading state with progress indicator
 
-Login Screen: Campus selection + user authentication
+### 📊 Dashboard Screen
+- Displays total entity count
+- RecyclerView showing entity list
+- Pull-to-refresh support
+- Error states with retry option
+- Tap on entity → navigate to Details
 
-Dashboard Screen: Displays entity list from API
+### 📄 Details Screen
+- Full entity information
+- Clean scrollable layout
+- User-friendly Material UI
 
-Details Screen: Shows detailed information of a selected entity
+---
 
-API Integration
+## 🔗 API Integration
 
-Base URL: https://nit3213api.onrender.com/
-
-Login Endpoint: POST /{campus}/auth
-
-Dashboard Endpoint: GET /dashboard/{keypass}
-
-Login Credentials
-
-Username: Your first name
-
-Password: Your Student ID without 's' (e.g., 8066285)
-
-Campus: footscray, sydney, or br
-
-Technical Stack
-
-Language: Kotlin
-
-Architecture: Clean Architecture (MVVM)
-
-Dependency Injection: Hilt
-
-Networking: Retrofit + Moshi
-
-Navigation: Navigation Component + Safe Args
-
-UI: Material Design 3 + ViewBinding
-
-Data Storage: DataStore Preferences
-
-Testing: JUnit + MockK + Coroutines Test
-
-Project Setup
-Prerequisites
-
-Android Studio Jellyfish (2023.1.1+)
-
-JDK 17+
-
-Android SDK (API 24+)
-
-Git
-
-Installation Steps
-
-Clone the repository:
-
-git clone <your-repository-url>
-cd FinalApp
-
-
-=======
-# NIT3213 Mobile Application Development - Final Assignment
-
-This Android application demonstrates API integration, Clean Architecture, and modern Android development practices for the NIT3213 course.
-
-## Project Overview
-
-The app implements a three-screen workflow:
-- **Login Screen**: Campus selection + user authentication
-- **Dashboard Screen**: Displays entity list from API
-- **Details Screen**: Shows detailed information of a selected entity
-
-## API Integration
-
-- **Base URL**: `https://nit3213api.onrender.com/`
+- **Base URL**: [https://nit3213api.onrender.com/](https://nit3213api.onrender.com/)
 - **Login Endpoint**: `POST /{campus}/auth`
 - **Dashboard Endpoint**: `GET /dashboard/{keypass}`
 
-### Login Credentials
+---
+
+## 👤 Login Credentials
+
 - **Username**: Your first name
-- **Password**: Your Student ID without 's' (e.g., `8066285`)
+- **Password**: Your Student ID without `s` (e.g., `8066285`)
 - **Campus**: `footscray`, `sydney`, or `br`
 
-## Technical Stack
+---
+
+## ⚙️ Technical Stack
 
 - **Language**: Kotlin
-- **Architecture**: Clean Architecture (MVVM)
+- **Architecture**: Clean Architecture + MVVM
 - **Dependency Injection**: Hilt
 - **Networking**: Retrofit + Moshi
-- **Navigation**: Navigation Component + Safe Args
-- **UI**: Material Design 3 + ViewBinding
+- **Navigation**: Navigation Component with Safe Args
+- **UI**: View Binding + Material Design 3
 - **Data Storage**: DataStore Preferences
 - **Testing**: JUnit + MockK + Coroutines Test
 
-## Project Setup
+---
 
-### Prerequisites
-- Android Studio Jellyfish (2023.1.1+)
-- JDK 17+
-- Android SDK (API 24+)
-- Git
+## 🗂️ Project Structure
 
-### Installation Steps
-
-1. **Clone the repository**:
-   ```bash
-   git clone <your-repository-url>
-   cd FinalApp
->>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
-Open in Android Studio:
-
-Launch Android Studio
-
-Select "Open an existing project"
-
-Navigate to FinalApp/
-
-Sync the project:
-
-Gradle sync will start automatically
-
-Accept SDK prompts if required
-
-Set up an emulator or device:
-
-Tools > AVD Manager
-
-Create emulator (API 24+)
-
-Run the app:
-
-Press green ▶️ Run
-
-Select emulator/connected device
-
-Project Structure
-,,,
-
+```
 FinalApp/
-└── app/
-├── src/main/java/com/example/finalapp/
-│   ├── MyApp.kt                  # Hilt entry point
-│   ├── MainActivity.kt           # NavHost container
-│   ├── data/
-│   │   ├── api/
-│   │   │   └── ApiService.kt
-│   │   ├── models/
-│   │   │   ├── LoginRequest.kt
-│   │   │   ├── LoginResponse.kt
-│   │   │   ├── DashboardResponse.kt
-│   │   │   └── Entity.kt
-│   │   └── repository/
-│   │       └── AppRepository.kt
-│   ├── domain/
-│   │   ├── repository/
-│   │   │   └── AppRepositoryInterface.kt
-│   │   └── usecase/
-│   │       ├── LoginUseCase.kt
-│   │       └── GetDashboardUseCase.kt
-│   ├── di/
-│   │   ├── NetworkModule.kt
-│   │   └── AppModule.kt
-│   └── presentation/
-│       ├── login/
-│       │   ├── LoginFragment.kt
-│       │   └── LoginViewModel.kt
-│       ├── dashboard/
-│       │   ├── DashboardFragment.kt
-│       │   ├── DashboardAdapter.kt
-│       │   └── DashboardViewModel.kt
-│       └── details/
-│           └── DetailsFragment.kt
-├── src/main/res/
-│   ├── layout/                    # XML layouts
-│   └── navigation/
-│       └── nav_graph.xml
-├── build.gradle
+├── app/
+│   ├── src/main/java/com/example/finalapp/
+│   │   ├── MyApp.kt                        # Hilt entry point
+│   │   ├── MainActivity.kt                 # NavHost container
+│   │   ├── data/
+│   │   │   ├── api/
+│   │   │   │   └── ApiService.kt           # Retrofit endpoints
+│   │   │   ├── models/
+│   │   │   │   ├── LoginRequest.kt
+│   │   │   │   ├── LoginResponse.kt
+│   │   │   │   ├── DashboardResponse.kt
+│   │   │   │   └── Entity.kt
+│   │   │   └── repository/
+│   │   │       └── AppRepository.kt        # Repository implementation
+│   │   ├── domain/
+│   │   │   ├── repository/
+│   │   │   │   └── AppRepositoryInterface.kt
+│   │   │   └── usecase/
+│   │   │       ├── LoginUseCase.kt
+│   │   │       └── GetDashboardUseCase.kt
+│   │   ├── di/
+│   │   │   ├── AppModule.kt                # Binds Repository -> Interface
+│   │   │   └── NetworkModule.kt            # Retrofit/OkHttp/Moshi providers
+│   │   ├── presentation/
+│   │   │   ├── login/
+│   │   │   │   ├── LoginFragment.kt
+│   │   │   │   └── LoginViewModel.kt
+│   │   │   ├── dashboard/
+│   │   │   │   ├── DashboardFragment.kt
+│   │   │   │   ├── DashboardAdapter.kt
+│   │   │   │   └── DashboardViewModel.kt
+│   │   │   └── details/
+│   │   │       └── DetailsFragment.kt
+│   │   ├── utils/
+│   │   │   ├── Constants.kt                 # BASE_URL, keys…
+│   │   │   └── Resource.kt                  # Loading/Success/Error wrapper
+│   │   └── res/                             # XML resources
+│   ├── src/main/res/
+│   │   ├── layout/
+│   │   ├── navigation/
+│   │   │   └── nav_graph.xml
+│   │   └── values/
+│   └── AndroidManifest.xml
+├── build.gradle.kts                         # Project-level (KTS)
+├── settings.gradle.kts
 └── gradle.properties
+```
+## 🔑 Features
 
-,,,
+### 🔐 Login Screen
+- Campus dropdown (footscray, sydney, br)  
+- Username + Password input  
+- Input validation & error handling  
+- Loading state with progress indicator  
 
+### 📊 Dashboard Screen
+- Displays total entity count  
+- RecyclerView showing entity list  
+- Pull-to-refresh support  
+- Error states with retry option  
+- Tap on entity → navigate to Details  
 
-Input validation + error handling
+### 📄 Details Screen
+- Full entity information  
+- Clean scrollable layout  
+- User-friendly Material UI  
 
-Loading indicator
+---
 
-Dashboard Screen
-<<<<<<< HEAD
+## 🏛 Architecture
 
-=======
->>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
-RecyclerView entity list
+This project follows **Clean Architecture**:
 
-Loading + error states
+- **Domain Layer**: Use cases + business rules  
+- **Data Layer**: Repository + API service (Retrofit + Moshi)  
+- **Presentation Layer**: ViewModels, Fragments, Adapters  
 
-Navigate to details on item click
+### Dependency Injection
+- Hilt used for dependency injection  
+- Singleton scope for API + Repository  
+- ViewModel scope for UI  
 
-Details Screen
-<<<<<<< HEAD
+### State Management
+- StateFlow for reactive updates  
+- Sealed classes for UI state (`Loading`, `Success`, `Error`)  
 
-=======
->>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
-Display full entity info (field, concept, scientist, description)
+---
 
-Scrollable UI
+## 🧪 Testing
+- Unit tests for:
+  - `LoginViewModel`  
+  - `DashboardViewModel`  
+  - Repository functions  
 
-Architecture
-<<<<<<< HEAD
+- **Frameworks & Tools**:
+  - MockK for mocking dependencies  
+  - JUnit for test execution  
+  - Coroutines Test for async testing  
 
-=======
->>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
-Domain Layer: Business logic & usecases
+---
 
-Data Layer: Repository + Retrofit API service
+## 🛠️ Troubleshooting
 
-UI Layer: Fragments + ViewModels + Adapters
+### Common Issues
+1. **Gradle sync fails**  
+   - Check internet connection  
+   - Try `File > Sync Project with Gradle Files`  
+   - Clean & rebuild project  
 
-Dependency Injection
-<<<<<<< HEAD
+2. **Build errors**  
+   - Ensure JDK 17 is installed  
+   - Check Android SDK components  
+   - Clean & rebuild project  
 
-=======
->>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
-Hilt provides DI across app
+3. **Emulator issues**  
+   - Allocate sufficient RAM (4GB+)  
+   - Use hardware acceleration  
+   - Verify AVD configuration  
 
-@Singleton for repositories and network
+4. **API connection issues**  
+   - Check internet connection  
+   - Verify API endpoint availability  
+   - Ensure correct username/password  
 
-@HiltViewModel for ViewModels
+---
 
-State Management
-<<<<<<< HEAD
+## ✅ Assignment Requirements
 
-=======
->>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
-Resource<Success|Error|Loading> wrapper
+- **Project Completion (40%)**:  
+  ✔ All three screens implemented  
+  ✔ API integration working  
+  ✔ Navigation between screens  
+  ✔ Error handling implemented  
 
-LiveData observers in Fragments
+- **Code Organization (15%)**:  
+  ✔ Clean Architecture structure  
+  ✔ Proper separation of concerns  
+  ✔ Readable + maintainable code  
+  ✔ Professional comments  
 
-Testing
-<<<<<<< HEAD
+- **Dependency Injection (25%)**:  
+  ✔ Hilt implementation  
+  ✔ Proper module structure  
+  ✔ Interface-based dependencies  
+  ✔ Singleton + ViewModel scopes  
 
-=======
->>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
-JUnit for ViewModels & Repositories
+- **Unit Testing (10%)**:  
+  ✔ ViewModel tests  
+  ✔ Repository tests  
+  ✔ Mock dependencies  
+  ✔ Test coverage  
 
-MockK for mocking dependencies
+- **Git Usage (5%)**:  
+  ✔ Meaningful commit messages  
+  ✔ Clear project history  
+  ✔ Proper branching  
 
-Coroutines Test for async flows
+- **README (5%)**:  
+  ✔ Comprehensive documentation  
+  ✔ Setup instructions  
+  ✔ Architecture explanation  
+  ✔ Troubleshooting guide  
 
-Run:
+---
 
-<<<<<<< HEAD
-./gradlew test
+## 📝 Development Notes
+- **Language**: Kotlin  
+- **Minimum SDK**: API 24 (Android 7.0)  
+- **Target SDK**: API 35 (Android 15)  
+- **Build System**: Gradle 8.1.4  
+- **UI Framework**: View Binding + Material Design 3  
 
-Assignment Requirements
+---
 
-=======
-bash
-Copy code
-./gradlew test
-Assignment Requirements
->>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
-✅ Three screens (Login, Dashboard, Details)
-✅ API integration (Login + Dashboard)
-✅ Navigation with Safe Args
-✅ Clean Architecture + Hilt
-✅ Error handling + loading states
-✅ GitHub repo with README + License
+## 🚀 Future Enhancements
+- Offline support with Room database  
+- Image loading with Glide/Coil  
+- Push notifications  
+- Dark theme support  
+- Accessibility improvements  
+- Performance monitoring  
 
-Development Notes
-<<<<<<< HEAD
+---
 
-=======
->>>>>>> 3417fd0 (Update README.md with proper Markdown formatting)
-Min SDK: 24
-
-Target SDK: 35
-
-Gradle: 8.1.4
-
-Language: Kotlin
-
-
-# License
-
-This project is created for educational purposes as part of the NIT3213 Mobile Application Development course.
+## 📄 License
+This project is created for **educational purposes** as part of the *NIT3213 Mobile Application Development* course.  
