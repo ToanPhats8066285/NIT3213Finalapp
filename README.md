@@ -93,11 +93,11 @@ FinalApp/
 │   │   │   │   └── DashboardViewModel.kt
 │   │   │   └── details/
 │   │   │       └── DetailsFragment.kt
-│   │   ├── utils/
-│   │   │   ├── Constants.kt                 # BASE_URL, keys…
-│   │   │   └── Resource.kt                  # Loading/Success/Error wrapper
-│   │   └── res/                             # XML resources
-│   ├── src/main/res/
+│   │    ── utils/
+│   │       ├── Constants.kt                 # BASE_URL, keys…
+│   │       └── Resource.kt                  # Loading/Success/Error wrapper
+│   │                              
+│   ├── src/main/res/                        # XML resources
 │   │   ├── layout/
 │   │   ├── navigation/
 │   │   │   └── nav_graph.xml
